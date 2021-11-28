@@ -1,0 +1,7 @@
+{
+    "transaction": {
+        "customerId": "0",
+		"toCustomerId": "1",
+        "value": "9999999"
+    }
+}
