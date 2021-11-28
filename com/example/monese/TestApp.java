@@ -6,7 +6,7 @@ import java.io.IOException;
 public class TestApp {
     public static void main(String[] argh) throws IOException {
 	populateDummyDatabase();
-	cleanResponseFolder();
+	manageFolders();
 	processFiles();
     }
 
@@ -18,8 +18,12 @@ public class TestApp {
 	}
     }
 
-    private static void cleanResponseFolder() {
-	File[] files = new File("responses").listFiles();
+    private static void manageFolders() {
+	File responsesFolder = new File("responses");
+	if (!responsesFolder.exists()) {
+	    responsesFolder.mkdir();
+	}
+	File[] files = responsesFolder.listFiles();
 	for (File responseFiles : files) {
 	    responseFiles.delete();
 	}
